@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f1e6">
+    <meta name="description" content="«Persona» — короткие интерактивные истории о знакомых разговорах. Поговори с командой 15–20 минут и получи приглашение в бесплатный ранний доступ и премиум аккаунт на год.">
+    <meta property="og:title" content="Persona — разговор можно попробовать по-другому">
+    <meta property="og:description" content="Разговор закончился, а ты всё ещё подбираешь ответ?">
+    <meta property="og:type" content="website">
+    <title>Persona — разговор можно попробовать по-другому</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./config.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержанию</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Persona — наверх">PERSON<span>A</span><span class="wordmark-dot">●</span></a>
+        <nav class="main-nav" aria-label="Разделы сайта">
+          <a href="#how">Как это работает</a>
+          <a href="#story">Пример истории</a>
+          <a href="#interview">Интервью</a>
+        </nav>
+        <a class="header-cta" href="#interview">Записаться <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main id="main">
+        <section id="top" class="hero section-frame">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-mark">✳</span> Короткие истории о разговорах, которые хочется переиграть</p>
+            <h1>Разговор закончился, <br>а ты всё ещё<br><span class="hero-impact">подбираешь<br>ответ?</span></h1>
+            <p class="hero-description">В «Persona» ты оказываешься в той самой ситуации. Выбираешь реплику или используешь микрофон, полностью погружаясь в историю, общаясь с персонажами — собеседники отвечают, а в конце видишь анализ и полный разбор своих ответов</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#interview">Записаться на интервью <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#story">Посмотреть пример <span aria-hidden="true">↘</span></a>
+            </div>
+            <p class="microcopy">15–20 минут разговора → бесплатный ранний доступ и премиум аккаунт на год</p>
+          </div>
+          <div class="hero-art" aria-label="Иллюстрация: обычный ответ в моменте и более точные слова позже">
+            <div class="poster-top"><span>ЗНАКОМАЯ СЦЕНА № 01</span><span>3–5 МИНУТ</span></div>
+            <div class="poster-body">
+              <div class="poster-burst" aria-hidden="true">?</div>
+              <div class="poster-speech poster-speech-one"><small>В МОМЕНТЕ</small><strong>«Ладно,<br>проходите»</strong></div>
+              <div class="poster-speech poster-speech-two"><small>УЖЕ ПО ДОРОГЕ ДОМОЙ</small><strong>«Подождите,<br>у меня тоже запись»</strong></div>
+              <div class="poster-stamp">ОТВЕТ ПРИШЁЛ<br>ПОЗЖЕ ↗</div>
+            </div>
+            <div class="poster-bottom"><span>А ЕСЛИ ПОПРОБОВАТЬ СКАЗАТЬ ЭТО СЕЙЧАС?</span><span>↓</span></div>
+          </div>
+        </section>
+
+        <section class="recognition section-frame" aria-labelledby="recognition-title">
+          <div class="section-heading-row">
+            <p class="section-index">01 / ЗНАКОМО?</p>
+            <h2 id="recognition-title">Вроде обычный разговор.<br><em>А потом возвращаешься к нему весь вечер.</em></h2>
+          </div>
+          <div class="recognition-list">
+            <p><span>01</span> Говоришь «да» на просьбу, когда времени нет.</p>
+            <p><span>02</span> Пропускаешь кого-то вперёд и злишься на себя.</p>
+            <p><span>03</span> Молчишь в споре, а дома находишь нужные слова.</p>
+          </div>
+          <div class="comparison" id="comparison" style="--split:50%">
+            <div class="comparison-side comparison-after"><div><span>ПОЗЖЕ</span><strong>«Вот что надо<br>было сказать!»</strong></div></div>
+            <div class="comparison-side comparison-before"><div><span>В МОМЕНТЕ</span><strong>«Ну ладно...»</strong></div></div>
+            <div class="comparison-line" aria-hidden="true"><span>↔</span></div>
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Открыть ответ в моменте поверх мысли после разговора">
+          </div>
+          <p class="comparison-caption">Потяни разделитель. В игре такой момент можно прожить ещё раз — и ответить, пока разговор идёт.</p>
+        </section>
+
+        <section id="story" class="story-section section-frame" aria-labelledby="story-title">
+          <div class="story-intro">
+            <div><p class="section-index">02 / ПРИМЕР ИСТОРИИ</p><h2 id="story-title">Вот как выглядит<br><em>одна история.</em></h2></div>
+            <p>Несколько минут, знакомая ситуация и люди, которые отвечают на твои слова. Нажми на реплику и посмотри, что произойдёт.</p>
+          </div>
+          <div class="story-shell">
+            <div class="story-topbar"><span>ЭПИЗОД 01 / В ОЧЕРЕДИ</span><span>КОНЦЕПТ ИГРОВОГО ЭПИЗОДА</span></div>
+            <div class="scene" id="scene">
+              <img class="scene-background" src="./assets/clinic-corridor.webp" alt="Рисованный коридор российской поликлиники с ожидающими приёма людьми" width="1600" height="900">
+              <div class="scene-shade" aria-hidden="true"></div>
+              <img class="scene-character" id="sceneCharacter" src="./assets/elder-neutral.webp" alt="Пожилой мужчина у двери кабинета хмурится" width="1254" height="1254">
+              <div class="scene-meta"><span>ПОЛИКЛИНИКА</span><span>ТАЛОН НА 11:20</span></div>
+              <div class="dialogue" aria-live="polite"><span class="dialogue-speaker" id="speaker">МУЖЧИНА У ДВЕРИ</span><p id="dialogueText">Мне только спросить. Пропустишь меня?</p></div>
+            </div>
+            <div class="choice-area" id="choiceArea">
+              <div class="choice-label"><span>ТВОЯ РЕПЛИКА</span><span>ВЫБЕРИ ВАРИАНТ ↓</span></div>
+              <div class="choices">
+                <button type="button" class="choice" data-choice="agree"><span class="choice-number">01</span><span>Проходите</span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+                <button type="button" class="choice" data-choice="clarify"><span class="choice-number">02</span><span>У меня сейчас запись. Давайте уточним у медсестры.</span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+                <button type="button" class="choice choice-own" id="ownReplyButton" aria-expanded="false" aria-controls="ownReplyPanel"><span class="choice-number">03</span><span>Ответить своими словами</span><span class="choice-arrow" aria-hidden="true">✎</span></button>
+              </div>
+              <form class="own-reply" id="ownReplyPanel" hidden>
+                <label for="ownReply">Что бы ты сказал(а)?</label>
+                <div class="own-reply-input"><input id="ownReply" name="ownReply" maxlength="220" placeholder="Напиши свою реплику…" required><button class="mic-button" id="micButton" type="button" hidden aria-label="Произнести ответ" title="Произнести ответ"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4m-4 0h8"/></svg></button><button class="reply-submit" type="submit">Ответить ↗</button></div>
+                <p class="reply-hint" id="replyHint">Это концепт. Написанный ответ покажет пример продолжения, без анализа твоих слов.</p>
+              </form>
+              <div class="story-result" id="storyResult" hidden aria-live="polite"><p class="result-label">КОНЦЕПТ РАЗБОРА</p><p id="resultText"></p><p class="method-label">ЧТО МОЖНО ПОПРОБОВАТЬ</p><p class="method-text" id="methodText"></p><button type="button" class="reset-button" id="resetStory">Попробовать другой ответ ↺</button></div>
+            </div>
+          </div>
+          <p class="story-note">Это иллюстрация механики с заранее написанными репликами. В будущей игре разговор будет развиваться по твоему выбору.</p>
+        </section>
+
+        <section id="how" class="how-section section-frame" aria-labelledby="how-title">
+          <div class="section-heading-row"><p class="section-index">03 / КАК ЭТО РАБОТАЕТ</p><h2 id="how-title">Твои слова<br><em>меняют разговор.</em></h2></div>
+          <div class="how-grid">
+            <article><span class="how-number">01<span aria-hidden="true">↗</span></span><h3>Окажись в знакомой ситуации</h3><p>Друг/подруга просит в долг, одногруппник перекладывает задачу, кто-то проходит без очереди. Одна история занимает 3–5 минут</p></article>
+            <article><span class="how-number">02<span aria-hidden="true">↗</span></span><h3>Реши, что сказать</h3><p>Выбери вариант или напиши свою реплику. У собеседников свои цели: они могут возразить, уступить или предложить другое.</p></article>
+            <article><span class="how-number">03<span aria-hidden="true">↗</span></span><h3>Посмотри, что получилось</h3><p>После истории увидишь полноценный разбор при помощи специального ИИ-агента и наблюдение по своим решениям. Несколько историй помогут заметить, какие выборы повторяются.</p></article>
+          </div>
+        </section>
+
+        <section id="interview" class="interview-section section-frame" aria-labelledby="interview-title">
+          <div class="interview-copy">
+            <p class="section-index">04 / ПРИСОЕДИНИТЬСЯ</p>
+            <h2 id="interview-title">Помоги сделать истории <em>похожими на жизнь.</em></h2>
+            <p>Мы собираем реальные ситуации для «Persona» и проверяем, узнаются ли в них люди. Расскажи об обычном разговоре, который хотелось бы переиграть, или просто поделись впечатлением от примера, а также ответь на пару вопросов, которые помогут улучшить проект!</p>
+            <p>Подготовка не нужна. Можно выбрать ситуацию, которую комфортно обсуждать.</p>
+            <div class="interview-sticker"><span>15–20 МИНУТ</span><strong>бесплатный ранний доступ и премиум аккаунт на год!</strong><small>приглашение придёт, когда откроем тест</small></div>
+          </div>
+          <div class="form-panel">
+            <div class="form-heading"><span>ЗАЯВКА НА ИНТЕРВЬЮ</span><span>↗</span></div>
+            <form id="interviewForm" novalidate>
+              <label for="contactMethod">Как с тобой связаться?</label>
+              <select id="contactMethod" name="Способ связи" required><option value="email">По электронной почте</option><option value="telegram">В Telegram</option></select>
+              <label for="contactValue" id="contactLabel">Адрес электронной почты</label>
+              <input id="contactValue" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
+              <div class="form-pair"><div><label for="preferredDate">Удобная дата</label><input id="preferredDate" name="Предпочтительная дата" type="date" required></div><div><label for="preferredTime">Удобное время <small>(МСК)</small></label><select id="preferredTime" name="Предпочтительное время (МСК)" required><option value="">Выбрать</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>18:00–20:00</option></select></div></div>
+              <p class="form-note">Это пожелание по времени, а не готовая запись: мы ответим и подтвердим день и час.</p>
+              <fieldset class="research-fields"><legend>Пара вопросов для проекта</legend><label for="sceneInterest">Какой разговор хотелось бы переиграть?</label><select id="sceneInterest" name="Интересная ситуация" required><option value="">Выбрать</option><option>С друзьями</option><option>На учёбе</option><option>В очереди или другом общественном месте</option><option>Пока не знаю</option></select><label for="featureInterest">Что заинтересовало сильнее?</label><select id="featureInterest" name="Интересная возможность" required><option value="">Выбрать</option><option>Выбор реплики</option><option>Возможность ответить голосом</option><option>Разбор после истории</option><option>Пока не знаю</option></select></fieldset>
+              <div class="honeypot" aria-hidden="true"><label for="companySite">Сайт компании</label><input id="companySite" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+              <label class="consent"><input id="consent" name="Согласие на связь" type="checkbox" required><span>Согласен(на), чтобы команда использовала мой контакт для ответа об интервью и приглашения в ранний тест. <a href="./privacy.html">Как обрабатываются данные</a></span></label>
+              <button class="button button-form" id="submitButton" type="submit">Хочу поучаствовать <span aria-hidden="true">↗</span></button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="faq-section section-frame" aria-labelledby="faq-title"><div class="section-heading-row"><p class="section-index">05 / КОРОТКО О ГЛАВНОМ</p><h2 id="faq-title">Могло возникнуть<br><em>несколько вопросов.</em></h2></div><div class="faq-list">
+          <details><summary>Нужно устанавливать приложение?</summary><p>Нет. Раннюю версию планируем открыть по ссылке в браузере и в Telegram.</p></details>
+          <details><summary>Можно ответить своими словами?</summary><p>Да, можно выбрать вариант, написать свою реплику или произнести её. В этом концепте кнопка микрофона появляется, если браузер поддерживает распознавание речи.</p></details>
+          <details><summary>Что я увижу после истории?</summary><p>Полный разбор своих решений и методику, по которой можно улучшить свои ответы. По нескольким историям можно будет увидеть, какие выборы повторяются, а над какими вещами ещё стоит поработать.</p></details>
+          <details><summary>Когда откроется доступ?</summary><p>Пришлём приглашение участникам интервью, когда будет готов ранний тест.</p></details>
+        </div></section>
+
+        <section class="final-cta section-frame" aria-labelledby="final-title"><div><p class="section-index">СЛЕДУЮЩАЯ РЕПЛИКА — ЗА ТОБОЙ</p><h2 id="final-title">Следующий разговор можно <em>попробовать по-другому.</em></h2><p>Помоги нам сделать первые истории живыми. Поговорим 15–20 минут — и ты получишь приглашение в бесплатный ранний доступ и премиум аккаунт на год.</p><a class="button button-light" href="#interview">Записаться на интервью <span aria-hidden="true">↗</span></a></div><span class="final-glyph" aria-hidden="true">?!</span></section>
+      </main>
+
+      <footer class="site-footer"><a class="wordmark" href="#top">PERSON<span>A</span><span class="wordmark-dot">●</span></a><span>Истории о словах, которые хочется сказать вовремя.</span><div><a id="teamEmailLink" href="#interview">Контакт команды</a><a href="./privacy.html">Обработка данных</a></div></footer>
+    </div>
+  </body>
+</html>

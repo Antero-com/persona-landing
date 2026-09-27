@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f1e6">
+    <title>Обработка данных — Persona</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./config.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержанию</a>
+    <div class="site-shell">
+      <header class="site-header"><a class="wordmark" href="./index.html#top">PERSON<span>A</span><span class="wordmark-dot">●</span></a><a class="header-cta" href="./index.html#interview">На лендинг ↗</a></header>
+      <main class="privacy-main section-frame" id="main">
+        <p class="section-index">ОБРАБОТКА ДАННЫХ / PERSONA</p>
+        <h1>Что происходит<br>с твоим контактом?</h1>
+        <p class="privacy-lead">Мы просим контакт и удобное время только для того, чтобы договориться об интервью и затем прислать приглашение в ранний тест.</p>
+        <div class="privacy-grid">
+          <section><h2>Что получаем</h2><p>Адрес электронной почты или имя пользователя в Telegram, выбранные дату и интервал времени, ответы на два вопроса о проекте и согласие на связь. Если ты сам(а) расскажешь о ситуации на интервью, мы используем рассказ для улучшения историй.</p></section>
+          <section><h2>Как используем</h2><p>Ответим по выбранному каналу связи, согласуем время интервью и сообщим об открытии раннего доступа. Время в форме — пожелание, окончательно подтвердим его лично.</p></section>
+          <section><h2>Куда попадает заявка</h2><p>Форму обрабатывает Formspree: данные заявки доступны команде в её кабинете и могут приходить на адрес команды в виде уведомления. Не публикуем твой контакт на сайте.</p></section>
+          <section><h2>Как удалить данные</h2><p>Напиши команде по адресу <a id="privacyEmail" href="./index.html#interview">контакт команды появится здесь перед открытием заявок</a> и попроси удалить заявку либо больше не писать тебе.</p></section>
+        </div>
+        <p class="privacy-tail">Перед открытием приёма заявок команда должна проверить этот текст и контактные данные для своего способа обработки данных.</p>
+        <a class="button button-primary" href="./index.html#interview">Вернуться к заявке <span aria-hidden="true">↗</span></a>
+      </main>
+      <footer class="site-footer"><a class="wordmark" href="./index.html#top">PERSON<span>A</span><span class="wordmark-dot">●</span></a><span>Истории о словах, которые хочется сказать вовремя.</span></footer>
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const email = window.PERSONA_CONFIG?.teamEmail?.trim() || "";
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          const link = document.querySelector("#privacyEmail");
+          link.href = `mailto:${email}`;
+          link.textContent = email;
+        }
+      });
+    </script>
+  </body>
+</html>
