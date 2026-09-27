@@ -22,21 +22,21 @@
 
   const outcomes = {
     agree: {
-      speaker: "МУЖЧИНА У ДВЕРИ",
+      speaker: "БАБУШКА У ДВЕРИ",
       dialogue: "Ой, спасибо, дорогуша!",
-      observation: "Ты уступаешь очередь, хотя у тебя запись. Пожилой мужчина доволен, но твоё время остаётся под вопросом.",
+      observation: "Ты уступаешь очередь, хотя у тебя запись. Бабушка довольна, но твоё время остаётся под вопросом.",
       method: "Если уступать не хочется, можно назвать время своего талона и предложить вместе уточнить порядок приёма.",
       expression: "grateful"
     },
     clarify: {
-      speaker: "МУЖЧИНА У ДВЕРИ",
+      speaker: "БАБУШКА У ДВЕРИ",
       dialogue: "Ой, молодёжь подождёт, у ней времени много.",
       observation: "Ты обозначаешь свою запись и предлагаешь проверить порядок. Собеседник обесценивает твоё время, и разговор пока не заканчивается.",
       method: "Можно спокойно повторить, что ты тоже ждёшь приёма, и обратиться к сотруднику поликлиники за общим правилом.",
       expression: "smug"
     },
     own: {
-      speaker: "МУЖЧИНА У ДВЕРИ",
+      speaker: "БАБУШКА У ДВЕРИ",
       dialogue: "Ну как знаешь. Мне всего на минуту.",
       observation: "Это заранее написанный пример реакции. Здесь ещё нет анализа смысла введённой реплики.",
       method: "В будущей игре ИИ-агент разберёт именно твой ответ и предложит, что можно попробовать дальше.",
@@ -45,9 +45,9 @@
   };
 
   const characterFrames = {
-    neutral: {idle: "./assets/elder-neutral.webp", talk: "./assets/elder-neutral-talk.webp"},
-    grateful: {idle: "./assets/elder-grateful.webp", talk: "./assets/elder-grateful-talk.webp"},
-    smug: {idle: "./assets/elder-smug.webp", talk: "./assets/elder-smug-talk.webp"}
+    neutral: {idle: "./assets/grandmother-neutral.webp", talk: "./assets/grandmother-neutral-talk.webp"},
+    grateful: {idle: "./assets/grandmother-grateful.webp", talk: "./assets/grandmother-grateful-talk.webp"},
+    smug: {idle: "./assets/grandmother-smug.webp", talk: "./assets/grandmother-smug-talk.webp"}
   };
   Object.values(characterFrames).forEach(frames => {
     [frames.idle, frames.talk].forEach(src => { const image = new Image(); image.src = src; });
@@ -97,7 +97,7 @@
     methodText.textContent = outcome.method;
     result.hidden = false;
     scene.dataset.reply = kind;
-    character.alt = kind === "agree" ? "Пожилой мужчина улыбается с благодарностью" : kind === "clarify" ? "Пожилой мужчина ухмыляется" : "Пожилой мужчина продолжает разговор";
+    character.alt = kind === "agree" ? "Пожилая женщина улыбается с благодарностью" : kind === "clarify" ? "Пожилая женщина ухмыляется" : "Пожилая женщина продолжает разговор";
     playSpeech(outcome.expression);
   }
 
@@ -115,9 +115,9 @@
       stopSpeech();
       choices.forEach(button => button.classList.remove("is-selected"));
       result.hidden = true;
-      speaker.textContent = "МУЖЧИНА У ДВЕРИ";
+      speaker.textContent = "БАБУШКА У ДВЕРИ";
       dialogue.textContent = "Мне только спросить. Пропустишь меня?";
-      character.alt = "Пожилой мужчина у двери кабинета хмурится";
+      character.alt = "Пожилая женщина в платке ждёт у двери кабинета";
       ownInput.focus();
     }
   });
@@ -136,9 +136,9 @@
     ownPanel.hidden = true;
     ownButton?.setAttribute("aria-expanded", "false");
     ownInput.value = "";
-    speaker.textContent = "МУЖЧИНА У ДВЕРИ";
+    speaker.textContent = "БАБУШКА У ДВЕРИ";
     dialogue.textContent = "Мне только спросить. Пропустишь меня?";
-    character.alt = "Пожилой мужчина у двери кабинета хмурится";
+    character.alt = "Пожилая женщина в платке ждёт у двери кабинета";
     result.hidden = true;
     scene.dataset.reply = "";
     choices[0]?.focus();

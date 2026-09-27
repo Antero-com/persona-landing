@@ -35,9 +35,11 @@ git push -u origin main
 ## Замена изображений и фона
 
 - `assets/clinic-corridor.webp` — задний фон игрового эпизода.
-- `assets/elder-neutral.webp` и `assets/elder-neutral-talk.webp` — дед в спокойном состоянии и кадр речи.
-- `assets/elder-grateful.webp` и `assets/elder-grateful-talk.webp` — благодарное выражение после ответа «Проходите».
-- `assets/elder-smug.webp` и `assets/elder-smug-talk.webp` — ухмылка после ответа про запись.
+- `assets/grandmother-neutral.webp` и `assets/grandmother-neutral-talk.webp` — бабушка в спокойном состоянии и кадр речи.
+- `assets/grandmother-grateful.webp` и `assets/grandmother-grateful-talk.webp` — благодарное выражение после ответа «Проходите».
+- `assets/grandmother-smug.webp` и `assets/grandmother-smug-talk.webp` — ухмылка после ответа про запись.
+
+После замены сцены прежние шесть файлов `assets/elder-*.webp` больше не используются; при желании их можно удалить из репозитория.
 
 Если новые файлы имеют те же имена, просто замените их в `assets/`. При других именах поменяйте `src` фона и начального персонажа в `index.html`, а пути шести кадров в объекте `characterFrames` в `script.js`. У кадров персонажа должен совпадать размер холста и положение головы, иначе при анимации он будет «прыгать». Композиция, размеры и положение слоёв настраиваются в `styles.css` в правилах `.scene-background` и `.scene-character`. Комиксный точечный узор и цвета всей страницы также находятся в `styles.css`, в начале файла.
 
