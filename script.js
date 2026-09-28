@@ -1,12 +1,6 @@
 (() => {
   "use strict";
 
-  const comparison = document.querySelector("#comparison");
-  const slider = comparison?.querySelector(".comparison-range");
-  slider?.addEventListener("input", () => {
-    comparison.style.setProperty("--split", `${slider.value}%`);
-  });
-
   const scene = document.querySelector("#scene");
   const dialogue = document.querySelector("#dialogueText");
   const speaker = document.querySelector("#speaker");
