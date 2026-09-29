@@ -1,6 +1,6 @@
-// Заполните эти два поля перед публикацией и приёмом заявок.
-// Идентификатор формы берётся в Formspree → ваша форма → Integration.
+// Заполните поля перед открытием заявок. Ссылка берётся в Яндекс Формах → Опубликовать.
 window.PERSONA_CONFIG = {
-  formspreeEndpoint: "https://formspree.io/f/xgavppzk",
+  yandexFormUrl: "",
+  operatorName: "",
   teamEmail: "andrey051407@mail.ru"
 };

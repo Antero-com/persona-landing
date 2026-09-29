@@ -189,75 +189,32 @@
 
   const config = window.PERSONA_CONFIG || {};
   const email = typeof config.teamEmail === "string" ? config.teamEmail.trim() : "";
-  const endpoint = typeof config.formspreeEndpoint === "string" ? config.formspreeEndpoint.trim() : "";
-  const validEndpoint = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint);
+  const operatorName = typeof config.operatorName === "string" ? config.operatorName.trim() : "";
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const teamEmailLink = document.querySelector("#teamEmailLink");
   if (validEmail && teamEmailLink) teamEmailLink.href = `mailto:${email}`;
 
-  const form = document.querySelector("#interviewForm");
-  if (!form) return;
-
-  const contactMethod = form.querySelector("#contactMethod");
-  const contactValue = form.querySelector("#contactValue");
-  const contactLabel = form.querySelector("#contactLabel");
-  const preferredDate = form.querySelector("#preferredDate");
-  const status = form.querySelector("#formStatus");
-  const submitButton = form.querySelector("#submitButton");
-
-  const tomorrow = new Date(Date.now() + 24 * 60 * 60 * 1000);
-  const parts = new Intl.DateTimeFormat("en-CA", {timeZone: "Europe/Moscow", year: "numeric", month: "2-digit", day: "2-digit"}).formatToParts(tomorrow);
-  const datePart = type => parts.find(part => part.type === type)?.value;
-  preferredDate.min = `${datePart("year")}-${datePart("month")}-${datePart("day")}`;
-
-  contactMethod.addEventListener("change", () => {
-    const telegram = contactMethod.value === "telegram";
-    contactValue.value = "";
-    contactValue.type = telegram ? "text" : "email";
-    contactValue.name = telegram ? "telegram" : "email";
-    contactValue.inputMode = telegram ? "text" : "email";
-    contactValue.autocomplete = telegram ? "off" : "email";
-    contactValue.placeholder = telegram ? "@username" : "you@example.com";
-    contactLabel.textContent = telegram ? "Имя пользователя в Telegram" : "Адрес электронной почты";
-    status.textContent = "";
-    status.className = "form-status";
-  });
-
-  form.addEventListener("submit", async event => {
-    event.preventDefault();
-    status.textContent = "";
-    status.className = "form-status";
-    if (!form.reportValidity()) return;
-    if (contactMethod.value === "telegram" && !/^@[A-Za-z0-9_]{5,32}$/.test(contactValue.value.trim())) {
-      status.textContent = "Укажи публичный username в формате @username.";
-      status.classList.add("is-error");
-      contactValue.focus();
-      return;
+  const rawFormUrl = typeof config.yandexFormUrl === "string" ? config.yandexFormUrl.trim() : "";
+  const embed = document.querySelector("#yandexEmbed");
+  const frame = document.querySelector("#yandexFrame");
+  const pending = document.querySelector("#formPending");
+  const openLink = document.querySelector("#openYandexForm");
+  let formUrl;
+  try {
+    const parsed = new URL(rawFormUrl);
+    if (parsed.protocol === "https:" && parsed.hostname === "forms.yandex.ru" && /^\/u\/[a-zA-Z0-9_-]+\/?$/.test(parsed.pathname)) {
+      formUrl = parsed;
     }
-    if (form.querySelector("#companySite").value) return;
-    if (!validEndpoint || !validEmail) {
-      status.textContent = "Приём заявок пока не подключён. Команда добавит адрес для ответов и обработчик формы перед публикацией.";
-      status.classList.add("is-error");
-      return;
-    }
+  } catch { /* Ссылка ещё не добавлена в конфигурацию. */ }
 
-    const data = new FormData(form);
-    data.set("subject", "Persona — заявка на интервью");
-    data.set("Часовой пояс", "Москва, UTC+3");
-    submitButton.disabled = true;
-    status.textContent = "Отправляем заявку…";
-    try {
-      const response = await fetch(endpoint, {method: "POST", body: data, headers: {Accept: "application/json"}});
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      form.reset();
-      contactMethod.dispatchEvent(new Event("change"));
-      status.textContent = "Спасибо! Заявка отправлена. Мы свяжемся с тобой и подтвердим время.";
-      status.classList.add("is-success");
-    } catch {
-      status.textContent = "Не удалось отправить заявку. Проверь соединение и попробуй ещё раз.";
-      status.classList.add("is-error");
-    } finally {
-      submitButton.disabled = false;
-    }
-  });
+  // Не загружаем внешнюю форму до указания владельца данных и контакта команды.
+  if (formUrl && operatorName && validEmail && embed && frame && pending && openLink) {
+    openLink.href = formUrl.toString();
+    formUrl.searchParams.set("iframe", "1");
+    formUrl.searchParams.set("theme", "light");
+    frame.src = formUrl.toString();
+    embed.hidden = false;
+    pending.hidden = true;
+    openLink.hidden = false;
+  }
 })();

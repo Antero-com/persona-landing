@@ -127,19 +127,13 @@
           </div>
           <div class="form-panel">
             <div class="form-heading"><span>ЗАЯВКА НА ИНТЕРВЬЮ</span><span>↗</span></div>
-            <form id="interviewForm" novalidate>
-              <label for="contactMethod">Как с тобой связаться?</label>
-              <select id="contactMethod" name="Способ связи" required><option value="email">По электронной почте</option><option value="telegram">В Telegram</option></select>
-              <label for="contactValue" id="contactLabel">Адрес электронной почты</label>
-              <input id="contactValue" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
-              <div class="form-pair"><div><label for="preferredDate">Удобная дата</label><input id="preferredDate" name="Предпочтительная дата" type="date" required></div><div><label for="preferredTime">Удобное время <small>(МСК)</small></label><select id="preferredTime" name="Предпочтительное время (МСК)" required><option value="">Выбрать</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>18:00–20:00</option></select></div></div>
-              <p class="form-note">Это пожелание по времени, а не готовая запись: мы ответим и подтвердим день и час.</p>
-              <fieldset class="research-fields"><legend>Пара вопросов для проекта</legend><label for="sceneInterest">Какой разговор хотелось бы переиграть?</label><select id="sceneInterest" name="Интересная ситуация" required><option value="">Выбрать</option><option>С друзьями</option><option>На учёбе</option><option>В очереди или другом общественном месте</option><option>Пока не знаю</option></select><label for="featureInterest">Что заинтересовало сильнее?</label><select id="featureInterest" name="Интересная возможность" required><option value="">Выбрать</option><option>Выбор реплики</option><option>Возможность ответить голосом</option><option>Разбор после истории</option><option>Пока не знаю</option></select></fieldset>
-              <div class="honeypot" aria-hidden="true"><label for="companySite">Сайт компании</label><input id="companySite" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
-              <label class="consent"><input id="consent" name="Согласие на связь" type="checkbox" required><span>Согласен(на), чтобы команда использовала мой контакт для ответа об интервью и приглашения в ранний тест. <a href="./privacy.html">Как обрабатываются данные</a></span></label>
-              <button class="button button-form" id="submitButton" type="submit">Хочу поучаствовать <span aria-hidden="true">↗</span></button>
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            </form>
+            <div class="form-embed-body">
+              <p class="form-embed-intro">Оставь контакт, выбери день и удобный час по Москве. Ответы попадут в Яндекс Формы.</p>
+              <div class="yandex-embed" id="yandexEmbed" hidden><iframe id="yandexFrame" title="Заявка на интервью Persona — Яндекс Формы" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+              <div class="form-pending" id="formPending" role="status"><span aria-hidden="true">✳</span><strong>Запись скоро откроется</strong><p>Форма появится здесь, когда команда начнёт приглашать участников.</p></div>
+              <p class="form-embed-note">Указанное время — пожелание, мы отдельно подтвердим день и час. <a href="./privacy.html">Как обрабатываются данные</a></p>
+              <a class="form-open-link" id="openYandexForm" href="#interview" target="_blank" rel="noopener noreferrer" hidden>Открыть форму в отдельной вкладке ↗</a>
+            </div>
           </div>
         </section>
 
@@ -153,7 +147,7 @@
         <section class="final-cta section-frame" aria-labelledby="final-title"><div><p class="section-index">СЛЕДУЮЩАЯ РЕПЛИКА — ЗА ТОБОЙ</p><h2 id="final-title">Следующий разговор можно <em>попробовать по-другому</em></h2><p>Помоги нам сделать первые истории живыми. Поговорим 15–20 минут — и ты получишь приглашение в бесплатный ранний доступ и премиум аккаунт на год.</p><a class="button button-light" href="#interview">Записаться на интервью <span aria-hidden="true">↗</span></a></div><span class="final-glyph" aria-hidden="true">?!</span></section>
       </main>
 
-      <footer class="site-footer"><a class="wordmark" href="#top">PERSON<span>A</span><span class="wordmark-dot">●</span></a><span>Истории о словах, которые хочется сказать вовремя.</span><div><span>andrey051407@mail.ru</span><a href="./privacy.html">Обработка данных</a></div></footer>
+      <footer class="site-footer"><a class="wordmark" href="#top">PERSON<span>A</span><span class="wordmark-dot">●</span></a><span>Истории о словах, которые хочется сказать вовремя.</span><div><a id="teamEmailLink" href="mailto:andrey051407@mail.ru">andrey051407@mail.ru</a><a href="./privacy.html">Обработка данных</a></div></footer>
     </div>
   </body>
 </html>
